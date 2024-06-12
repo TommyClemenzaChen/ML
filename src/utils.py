@@ -20,7 +20,7 @@ def save_object(file_path, obj):
             dill.dump(obj, file)
         
     except Exception as e:
-        raise CustomException("Error in saving object")
+        raise CustomException(e, sys)
 
 def evaluate_models(X_train, y_train,X_test,y_test,models,param=None):
     try:
@@ -56,4 +56,4 @@ def load_objects(file_path):
         with open(file_path, "rb") as file:
             return dill.load(file)
     except Exception as e:
-        raise CustomException("Error in loading object")
+        raise CustomException(e, sys)

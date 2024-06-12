@@ -8,6 +8,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from src.exception import CustomException
 from src.logger import logging
@@ -56,7 +57,7 @@ class DataTransformation:
             )
             return preprocessor
         except Exception as e:
-            raise CustomException("Error in creating data transformation pipeline")
+            raise CustomException(e,sys)
         
     def initiate_data_transformation(self, train_path, test_path):
 
