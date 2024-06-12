@@ -6,7 +6,12 @@ This project is a deplyoment guide for AWS, azure, AWS + docker, Azure + docker 
 * Using the wrong python version
 * Using the wrong file name in docker file(app.py instead of applicaiton.py) 
 * Missspleing everyhitng
-* Not getting hired <- big one 
+* Not getting hired <- big one
+### Errors:
+* ensure the py file in the dockerfile is correct(application.py not app.py)
+* out of memory: docker system prune -a --volumes
+* ensure the sklearn that saved the model is the same sklearn version that opens the model
+* 
 
 ## AWS deployment with Elastic beanstalk(only works for python 3.8)
 * Create an environment in elastic beanstalk
